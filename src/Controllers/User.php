@@ -3,6 +3,8 @@
 namespace Bookstore\Controllers;
 
 use Bookstore\Models\User as ModelsUser;
+use Bookstore\helpers\Connection;
+use Bookstore\Models\Book;
 
 class User
 {
@@ -21,5 +23,22 @@ class User
             }
         }
     
+    }
+
+    // display Add book page user
+    // public function bookpageuser()
+    // {
+    //     require "views/user/userBook.php";
+    // }
+
+    public function getbookuser(){
+        $book = new Book();
+        $bookList = $book ->getAll();
+        require "views/user/userBook.php";
+    }
+    public function onebookuser($id){
+        $book = new Book();
+        $books = $book ->getOneById($id);
+        require "views/user/onebook.php";
     }
 }

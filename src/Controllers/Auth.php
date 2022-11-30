@@ -31,7 +31,7 @@ class Auth
             global $baseUrl;
             // echo "test login";
             if (isset($_SESSION["user"])) {
-                header("location:$baseUrl/home");
+                header("location:$baseUrl/user/getbookuser");
             }
             
             if (isset($_POST['login'])) {
@@ -51,7 +51,7 @@ class Auth
                        if ($newUser['role']=="Admin") {
                         header("location:$baseUrl/admin");
                        }else{
-                        header("location:$baseUrl/home");
+                        header("location:$baseUrl/user/getbookuser");
                        }
                         
                     }else{
